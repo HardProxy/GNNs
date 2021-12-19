@@ -1,0 +1,24 @@
+# Criando um env no conda e instalando o pytorch
+
+conda create -n rtx_3060 python=3.6.5
+conda activate rtx_3060
+conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nv
+
+# LambdaLabs
+
+LAMBDA_REPO=$(mktemp) && \
+wget -O${LAMBDA_REPO} https://lambdalabs.com/static/misc/lambda-stack-repo.deb && \
+sudo dpkg -i ${LAMBDA_REPO} && rm -f ${LAMBDA_REPO} && \
+sudo apt-get update && sudo apt-get install -y lambda-stack-cuda
+
+# Reboot da máquina e rodar
+
+LAMBDA_REPO=$(mktemp) && \
+wget -O${LAMBDA_REPO} https://lambdalabs.com/static/misc/lambda-stack-repo.deb && \
+sudo dpkg -i ${LAMBDA_REPO} && rm -f ${LAMBDA_REPO} && \
+sudo apt-get update && \
+sudo apt-get --yes upgrade && \
+sudo apt-get install --yes --no-install-recommends lambda-server && \
+sudo apt-get install --yes --no-install-recommends nvidia-headless-455 && \
+sudo apt-get install --yes --no-install-recommends lambda-stack-cuda
+
