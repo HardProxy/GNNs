@@ -14,6 +14,10 @@ National Institute of Spatial Research (INPE)
 
 This directory is splitted in `references` and `code`. The code directory have the `gridsearch` directory to evaluate all models using parallel jobs to compute different models.
 
+## QM9 Dataset
+
+The [QM9 dataset](https://arxiv.org/abs/1703.00564) compile 134K organic molecules graphs that contains 19 physical properties based in DFT calculations. The data will downloaded will running the `searchgrid.py` code.
+
 ## Requirements 
 
 The project require the follow libraries:
